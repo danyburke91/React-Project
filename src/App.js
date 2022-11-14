@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Navigator, Main, Footer } from './components';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import styled from 'styled-components';
+
+const Content = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+const NavBar = styled.div`
+  padding-top: 5rem;
+`
+
+const MainPage = styled.div`
+  padding: 3rem 0rem;
+  min-height: 60vh;
+  position: relative;
+`
+
+const Foot = styled.div`
+  margin-top: auto;
+`
+
+class App extends Component {
+  render() {
+    return (
+      <Content>
+        <NavBar><Navigator /></NavBar>
+        <MainPage><Main /></MainPage>
+        <Foot><Footer /></Foot>
+      </Content>
+    );
+  }
 }
 
 export default App;
